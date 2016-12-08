@@ -30,9 +30,18 @@ app.get('/hero/:name', routes.hero);
 app.post('/hero/add-fact', routes.addFact);
 app.get('/hero/:name', routes.hero);
 
-app.get('/webhook', function(request, response) {
-  response.send('Hello World!')
-})
+
+
+app.get('/webhook', function(req, res) {
+  if (req.query['hub.mode'] === 'subscribe' &&
+      req.query['hub.verify_token'] === 'verifybotapp') {
+    console.log("Validating webhook");
+    res.status(200).send(req.query['hub.challenge']);
+  } else {
+    console.error("Failed validation. Make sure the validation tokens match.");
+    res.sendStatus(403);          
+  }  
+});
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
