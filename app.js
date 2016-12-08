@@ -121,7 +121,7 @@ function sendTextMessage(recipientId, messageText) {
 function callSendAPI(messageData) {
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: { access_token: EAAFTgAtycZCoBAGYYlHkctUixN43RzUMmSF6hZBTRPDtxHvXCdA3XyD8SZBasBRj4lAy4DfazrO3hUNe6uLcsZBQDR8G3bXyqYsZCgVXGZBXLdyL1OlZB1Qiv7QZCsvQA0bntiaOioV7zJhn2PKzgkw4ZAwt2nZC8kfZAyI4aZAyBTss8QZDZD },
+    qs: { access_token: 'EAAFTgAtycZCoBAMPW1luDxOnQGlrz7w4mt7xm5ZBybNNlpIry9ZBLeUexg1kG6nc9PBp8WV4KjaLM9m8mYKz0GKyQfkZC70GOCdiuoMHLuSJArS6n8pJyI0CpmJuf6u2aRoAB3XxhijdMO665A9IIpvF4FJFAOEQDPJvfFDxjgZDZD' },
     method: 'POST',
     json: messageData
 
